@@ -40,6 +40,8 @@ public class DragManager : MonoBehaviour
                 Destroy(_joint);
                 _board.IsFrozen = false;
                 _board.AddBlock(_currentBlock);
+                var decay = _currentBlock.AddComponent<Decay>();
+                decay._board = _board;
                 _currentBlock = null;
             }
         }

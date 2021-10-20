@@ -36,4 +36,10 @@ public class Board : MonoBehaviour
     {
         _blocks.Add(block);
     }
+
+
+    public void RemoveBlock(GameObject block)
+    {
+        _blocks.Remove(block);
+    }
 }
