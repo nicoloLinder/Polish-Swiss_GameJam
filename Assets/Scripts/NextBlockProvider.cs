@@ -5,8 +5,10 @@ public class NextBlockProvider : MonoBehaviour
 {
     [SerializeField] private Transform _lookupParent;
     [SerializeField] private GameObject[] _prefabs;
-    private GameObject _currentPrefab;
     
+    private GameObject _currentPrefab;
+
+    public Collider2D NextBlockCollider { get; set; }
     public GameObject NextBlock
     {
         get
@@ -38,7 +40,8 @@ public class NextBlockProvider : MonoBehaviour
         var rend = lookup.GetComponent<SpriteRenderer>();
         rend.color = new Color(1f,1f,1f,0.5f);
         rend.sortingOrder = -10;
-        lookup.GetComponent<Collider2D>().enabled = false;
+        NextBlockCollider = lookup.GetComponent<Collider2D>();
+        NextBlockCollider.isTrigger = true;
         lookup.GetComponent<Rigidbody2D>().isKinematic = true;
         lookup.transform.parent = _lookupParent;
         lookup.transform.localPosition = Vector3.zero;
