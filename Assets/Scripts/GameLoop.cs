@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class GameLoop : MonoBehaviour
 {
-
-    public List<GameObject> shapes;
     public float topPosition;
 
     [SerializeField] private NextBlockProvider _nextBlockProvider;

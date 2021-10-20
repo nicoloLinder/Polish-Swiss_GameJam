@@ -12,10 +12,14 @@ public class NextBlockProvider : MonoBehaviour
         get
         {
             var retVal = _currentPrefab;
-            _currentPrefab = _prefabs[Random.Range(0, _prefabs.Length)];
+            NextBlock = _prefabs[Random.Range(0, _prefabs.Length)];
             return retVal;
         }
-        private set => _currentPrefab = value;
+        private set
+        {
+            _currentPrefab = value;
+            DisplayNextBlock();
+        }
     }
 
     private void Awake()
@@ -31,8 +35,12 @@ public class NextBlockProvider : MonoBehaviour
         }
 
         var lookup = Instantiate(_currentPrefab);
-        lookup.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,0.5f);
+        var rend = lookup.GetComponent<SpriteRenderer>();
+        rend.color = new Color(1f,1f,1f,0.5f);
+        rend.sortingOrder = -10;
         lookup.GetComponent<Collider2D>().enabled = false;
         lookup.GetComponent<Rigidbody2D>().isKinematic = true;
+        lookup.transform.parent = _lookupParent;
+        lookup.transform.localPosition = Vector3.zero;
     }
 }
