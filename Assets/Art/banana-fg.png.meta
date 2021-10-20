@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fc63aee72dfd94d74b2b82275ea35297
+guid: d8ff149ce42fd4d4facf930fb3f3dc7b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -32,7 +32,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -114,30 +114,33 @@ TextureImporter:
   spriteSheet:
     serializedVersion: 2
     sprites: []
-    outline: []
+    outline:
+    - - {x: -26, y: 15}
+      - {x: -28, y: 13}
+      - {x: -23, y: 1}
+      - {x: -12, y: -9}
+      - {x: 7, y: -15}
+      - {x: 31, y: -14}
+      - {x: 31, y: -8}
+      - {x: 6, y: 2}
+      - {x: -13, y: 11}
+      - {x: -18, y: 12}
+      - {x: -21, y: 15}
     physicsShape:
-    - - {x: -25, y: 16}
-      - {x: -37, y: 16}
-      - {x: -35, y: 9}
-      - {x: -34, y: 3}
-      - {x: -31, y: -1}
-      - {x: -26, y: -3}
-      - {x: -26, y: -11}
-      - {x: -23, y: -15}
-      - {x: -23, y: -32}
-      - {x: -7, y: -32}
-      - {x: -6, y: -17}
-      - {x: 6, y: -16}
-      - {x: 9, y: -22}
-      - {x: 9, y: -32}
-      - {x: 25, y: -32}
-      - {x: 25, y: -21}
-      - {x: 30, y: -20}
-      - {x: 24, y: 2}
-      - {x: 17, y: 8}
-      - {x: -16, y: 8}
-      - {x: -11, y: 15}
-      - {x: -13, y: 18}
+    - - {x: -26, y: 16}
+      - {x: -28, y: 13}
+      - {x: -26, y: 7}
+      - {x: -18, y: -4}
+      - {x: -6, y: -11}
+      - {x: 6, y: -15}
+      - {x: 22, y: -15}
+      - {x: 31, y: -14}
+      - {x: 30, y: -8}
+      - {x: 14, y: -1}
+      - {x: -6, y: 8}
+      - {x: -13, y: 11}
+      - {x: -19, y: 12}
+      - {x: -21, y: 16}
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
