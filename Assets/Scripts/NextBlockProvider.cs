@@ -5,17 +5,23 @@ public class NextBlockProvider : MonoBehaviour
 {
     [SerializeField] private Transform _lookupParent;
     [SerializeField] private GameObject[] _prefabs;
-    private GameObject _currentPrefab;
     
+    private GameObject _currentPrefab;
+
+    public Collider2D NextBlockCollider { get; set; }
     public GameObject NextBlock
     {
         get
         {
             var retVal = _currentPrefab;
-            _currentPrefab = _prefabs[Random.Range(0, _prefabs.Length)];
+            NextBlock = _prefabs[Random.Range(0, _prefabs.Length)];
             return retVal;
         }
-        private set => _currentPrefab = value;
+        private set
+        {
+            _currentPrefab = value;
+            DisplayNextBlock();
+        }
     }
 
     private void Awake()
@@ -31,8 +37,13 @@ public class NextBlockProvider : MonoBehaviour
         }
 
         var lookup = Instantiate(_currentPrefab);
-        lookup.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,0.5f);
-        lookup.GetComponent<Collider2D>().enabled = false;
+        var rend = lookup.GetComponent<SpriteRenderer>();
+        rend.color = new Color(1f,1f,1f,0.5f);
+        rend.sortingOrder = -10;
+        NextBlockCollider = lookup.GetComponent<Collider2D>();
+        NextBlockCollider.isTrigger = true;
         lookup.GetComponent<Rigidbody2D>().isKinematic = true;
+        lookup.transform.parent = _lookupParent;
+        lookup.transform.localPosition = Vector3.zero;
     }
 }
