@@ -27,7 +27,7 @@ public class GameLoop : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Vector2 position = new Vector2(GetTouchPosition().x, topPosition);
+            Vector2 position = new Vector2(GetTouchPosition().x, transform.position.y + topPosition);
             SpawnShape(_nextBlockProvider.NextBlock, position);
         }
     }
