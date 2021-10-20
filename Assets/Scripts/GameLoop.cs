@@ -6,12 +6,9 @@ public class GameLoop : MonoBehaviour
 
     public List<GameObject> shapes;
     public float topPosition;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
+    [SerializeField] private NextBlockProvider _nextBlockProvider;
+
 
     private void OnDrawGizmos()
     {
@@ -24,7 +21,7 @@ public class GameLoop : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 position = new Vector2(GetTouchPosition().x, topPosition);
-            SpawnShape(shapes[Random.Range(0, shapes.Count)], position);
+            SpawnShape(_nextBlockProvider.NextBlock, position);
         }
     }
 

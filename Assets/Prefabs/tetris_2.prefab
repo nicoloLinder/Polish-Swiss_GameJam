@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7958600798132937724}
   - component: {fileID: 3941713706622352283}
   - component: {fileID: 1333275877315263415}
-  - component: {fileID: 495325368890311471}
+  - component: {fileID: 4491477301256325770}
   m_Layer: 0
   m_Name: tetris_2
   m_TagString: Untagged
@@ -96,7 +96,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 4.7931843
+  m_Mass: 4.2484837
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -105,7 +105,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &495325368890311471
+--- !u!60 &4491477301256325770
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,7 +122,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.1538463, y: 3.1846154}
+    oldSize: {x: 2.0289855, y: 3}
     newSize: {x: 2.1538463, y: 3.1846154}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -130,10 +130,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.053846154, y: 1.5923077}
-      - {x: -1.0769231, y: 1.5923077}
-      - {x: -1.0769231, y: -1.5923077}
-      - {x: 1.0769231, y: -1.5923077}
-      - {x: 1.0769231, y: -0.44615385}
-      - {x: 0.06381464, y: -0.44309396}
-      - {x: 0.06153846, y: 1.5846153}
+    - - {x: 0.05072464, y: 1.5}
+      - {x: -1.0144928, y: 1.5}
+      - {x: -1.0144928, y: -1.5}
+      - {x: 1.0144928, y: -1.5}
+      - {x: 1.0144928, y: -0.42028987}
+      - {x: 0.059513092, y: -0.42681885}
+      - {x: 0.057971016, y: 1.4927536}
