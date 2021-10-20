@@ -3,9 +3,11 @@ using UnityEngine;
 public class DragManager : MonoBehaviour
 {
     [SerializeField] private NextBlockProvider _blockProvider;
+    [SerializeField] private Board _board;
     private bool _dragging;
     private TargetJoint2D _joint;
     private Camera _mainCam;
+    private GameObject _currentBlock;
 
     private void Awake()
     {
@@ -14,12 +16,13 @@ public class DragManager : MonoBehaviour
 
     public void StartDragInteraciton(Vector2 touchPoint)
     {
+        _board.IsFrozen = true;
         _dragging = true;
         var position = _blockProvider.NextBlockCollider.transform.position;
-        var block = Instantiate(_blockProvider.NextBlock);
-        block.transform.position = position;
-        _joint = block.AddComponent<TargetJoint2D>();
-        _joint.anchor = block.transform.InverseTransformPoint(touchPoint);
+         _currentBlock = Instantiate(_blockProvider.NextBlock);
+         _currentBlock.transform.position = position;
+        _joint = _currentBlock.AddComponent<TargetJoint2D>();
+        _joint.anchor = _currentBlock.transform.InverseTransformPoint(touchPoint);
         _joint.dampingRatio = 10f;
         _joint.frequency = 15f;
         _joint.maxForce = 4000;
@@ -35,6 +38,9 @@ public class DragManager : MonoBehaviour
             {
                 _dragging = false;
                 Destroy(_joint);
+                _board.IsFrozen = false;
+                _board.AddBlock(_currentBlock);
+                _currentBlock = null;
             }
         }
     }
