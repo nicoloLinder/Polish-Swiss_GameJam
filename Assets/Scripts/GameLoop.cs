@@ -6,13 +6,22 @@ public class GameLoop : MonoBehaviour
 
     public List<GameObject> shapes;
     public float topPosition;
+    public float sideBounds;
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
 
     [SerializeField] private NextBlockProvider _nextBlockProvider;
 
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawCube(new Vector3(0,topPosition,0), Vector3.one);
+        Gizmos.color = new Color(1, 1, 1, 0.5f);
+        Gizmos.DrawCube(new Vector3(0,transform.position.y + topPosition,0), Vector3.one);
+        Gizmos.DrawCube(transform.position, new Vector3(sideBounds*2, topPosition*2));
     }
 
     // Update is called once per frame
@@ -32,7 +41,9 @@ public class GameLoop : MonoBehaviour
 
     Vector2 GetTouchPosition()
     {
-        return Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        var actualPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        var clampedValue = Mathf.Clamp(actualPosition.x, -sideBounds, sideBounds);
+        return new Vector2((int) clampedValue, actualPosition.y);
     }
     
 }
