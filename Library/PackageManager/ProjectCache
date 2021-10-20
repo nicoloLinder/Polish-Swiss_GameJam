@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637703214510000000
+      ticks: 637703219870000000
     m_Hash: 2053551833
   m_LockFileStatus:
     m_FilePath: /Users/nicololinder/Workspace/Polish-Swiss_GameJam/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637703214540000000
+      ticks: 637703219870000000
     m_Hash: 2154220959
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -105,9 +105,11 @@ m_PackageAssets:
         - 6.0.3
         - 6.0.4
         - 6.0.5
+        - 6.0.7
         - 7.0.0-pre.2
         - 7.0.0-pre.3
         - 7.0.0
+        - 7.0.1
         compatible:
         - 5.0.4
         - 5.0.5
@@ -303,10 +305,12 @@ m_PackageAssets:
         - 5.0.1
         - 5.0.3
         - 5.0.4
+        - 5.0.6
         - 6.0.0-pre.2
         - 6.0.0-pre.3
         - 6.0.0-pre.4
         - 6.0.0
+        - 6.0.1
         compatible:
         - 4.0.2
         verified: 4.0.2
@@ -490,9 +494,11 @@ m_PackageAssets:
         - 6.0.0-pre.2
         - 6.0.0
         - 6.0.1
+        - 6.0.2
         - 7.0.0-pre.2
         - 7.0.0-pre.3
         - 7.0.0
+        - 7.0.2
         compatible:
         - 5.1.1
         - 5.1.2
@@ -1034,12 +1040,14 @@ m_PackageAssets:
         - 1.1.26
         - 1.1.27
         - 1.1.29
+        - 1.1.30
         compatible:
         - 1.1.24
         - 1.1.26
         - 1.1.27
         - 1.1.29
-        verified: 1.1.29
+        - 1.1.30
+        verified: 1.1.30
       dependencies:
       - name: com.unity.ext.nunit
         version: 1.0.6
