@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class GameLoop : MonoBehaviour
 {
@@ -27,7 +24,7 @@ public class GameLoop : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 position = new Vector2(GetTouchPosition().x, topPosition);
-            SpawnShape(shapes[0], position);
+            SpawnShape(shapes[Random.Range(0, shapes.Count)], position);
         }
     }
 
