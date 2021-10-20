@@ -639,6 +639,7 @@ GameObject:
   - component: {fileID: 1619791828}
   - component: {fileID: 1619791830}
   - component: {fileID: 1619791831}
+  - component: {fileID: 1619791832}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -690,11 +691,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lookupParent: {fileID: 1057747429}
   _prefabs:
-  - {fileID: 1476638310985827220, guid: b736e9925cb3306438a006352fe5d515, type: 3}
-  - {fileID: 4609943196698822683, guid: 6da6515be8ba4cb4194dd956aa71cef8, type: 3}
-  - {fileID: 2670431321465474339, guid: 9c0e4d5593ea9d04986ce66b47124ca6, type: 3}
-  - {fileID: 1056907422111100073, guid: 7c916dc2af2747b45970a7748e66b8f5, type: 3}
-  - {fileID: 599586093176221417, guid: 710ee14ac880d9241ad2cf98994c569e, type: 3}
+  - {fileID: 1243937246920281491, guid: ab973f8d682d34fad965eb103f9b423c, type: 3}
+  - {fileID: 3804766553354173470, guid: 03f22634736a84817a67607987fa55ae, type: 3}
+  - {fileID: 5771558251356302591, guid: 720371c3097ec4facb1bfc577d9ffa7d, type: 3}
 --- !u!114 &1619791831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -708,6 +707,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _blockProvider: {fileID: 1619791830}
+  _board: {fileID: 1619791832}
+--- !u!114 &1619791832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619791827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca14edacb2a1c14cae426e0f9437f20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1804066568
 GameObject:
   m_ObjectHideFlags: 0
