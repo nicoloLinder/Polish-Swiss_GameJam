@@ -5833,7 +5833,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 550, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
@@ -7166,7 +7166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ec1e17f444b41b599bfd3c9b1c966eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0.5
+  level: 0
   good: {fileID: 1177796711}
   bad: {fileID: 1177796710}
   ugly: {fileID: 1177796709}
