@@ -12,6 +12,7 @@ public class Menu : MonoBehaviour
     [SerializeField] private List<GameObject> _objectsToEnable;
     [SerializeField] private List<GameObject> _objectsToDisable;
     [SerializeField] private List<GameObject> _objectsToSpawn;
+    [SerializeField] private List<GameObject> _creditsPrefabs;
     [SerializeField] private Transform _spawnPoint;
 
     private Collider2D _creditsCollider;
@@ -35,7 +36,7 @@ public class Menu : MonoBehaviour
             var ray = _camera.ScreenPointToRay(Input.mousePosition);
             if (_creditsCollider != null && _creditsCollider.OverlapPoint(ray.origin))
             {
-
+                StartCoroutine(SpawnCredits());
             }
             else if (_playCollider != null && _playCollider.OverlapPoint(ray.origin))
             {
@@ -73,5 +74,14 @@ public class Menu : MonoBehaviour
         yield return new WaitForSeconds(Random.Range(.6f, 1.5f));
         _spawnedObjects.Add(Instantiate(_playButtonPrefab, _spawnPoint.position, Quaternion.Euler(Vector3.forward * Random.value * 360f)));
         _playCollider = _spawnedObjects[_spawnedObjects.Count - 1].GetComponent<Collider2D>();
+    }
+
+    private IEnumerator SpawnCredits()
+    {
+        for (int i = 0; i < _creditsPrefabs.Count; i++)
+        {
+            _spawnedObjects.Add(Instantiate(_creditsPrefabs[i], _spawnPoint.position, Quaternion.Euler(Vector3.forward * Random.value * 360f)));
+            yield return new WaitForSeconds(Random.Range(.6f, 1.5f));
+        }
     }
 }

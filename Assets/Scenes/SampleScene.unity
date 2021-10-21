@@ -5518,6 +5518,12 @@ MonoBehaviour:
   - {fileID: 3961477781411706544, guid: 1acf204bef83c5649b56b0d5ed01ce35, type: 3}
   - {fileID: 2111540139504788918, guid: b3c7712c0390e6c4eae4f4d75ba62a9e, type: 3}
   - {fileID: 4330883922042046487, guid: cc6887795b4b6784dba3398d0274e59a, type: 3}
+  _creditsPrefabs:
+  - {fileID: 6433051217894785065, guid: 6bdbb4a1227269d46877789757688b64, type: 3}
+  - {fileID: 934173063161471858, guid: f345cb71dc0acd547bbde6cc40345e68, type: 3}
+  - {fileID: 1653954421032897126, guid: aae860eb022201149abd50e99b2bc038, type: 3}
+  - {fileID: 2578244719082076693, guid: 9ca458ab0bbbe8a4fb8162a4d5457635, type: 3}
+  - {fileID: 4950416124720292197, guid: 0bc6f5e65e97a124284a623f46c6764f, type: 3}
   _spawnPoint: {fileID: 670514702}
 --- !u!1 &557233414
 GameObject:
