@@ -11,6 +11,7 @@ public class PollutionDisplay : MonoBehaviour
     [SerializeField] private Transform[] _bounds;
     private float _currentPollution;
     private Quaternion[] _rotations;
+    [SerializeField] private Animator _animator;
     
     public event Action<float> NotifyPollutionChanged;
 
@@ -33,6 +34,8 @@ public class PollutionDisplay : MonoBehaviour
     {
         _currentPollution += block.PollutionModifier;
         NotifyPollutionChanged?.Invoke(_currentPollution);
+        var remappedPolution = Mathf.RoundToInt((_currentPollution / _maxPollution) * 2f);
+        _animator.SetInteger("level", remappedPolution);
     }
 
     private void Update()
