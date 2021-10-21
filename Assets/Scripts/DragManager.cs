@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DragManager : MonoBehaviour
 {
-    [SerializeField] private NextBlockProvider _blockProvider;
+    // [SerializeField] private NextBlockProvider _blockProvider;
     [SerializeField] private Board _board;
     private bool _dragging;
     private TargetJoint2D _joint;
@@ -14,18 +14,20 @@ public class DragManager : MonoBehaviour
         _mainCam = Camera.main;
     }
 
-    public void StartDragInteraciton(Vector2 touchPoint)
+    public Block StartDragInteraciton(Vector2 touchPoint,NextBlockProvider nextBlockProvider)
     {
         _board.IsFrozen = true;
         _dragging = true;
-        var position = _blockProvider.NextBlockCollider.transform.position;
-         _currentBlock = Instantiate(_blockProvider.NextBlock);
+        var position = nextBlockProvider.NextBlockCollider.transform.position;
+         _currentBlock = Instantiate(nextBlockProvider.NextBlock);
          _currentBlock.transform.position = position;
         _joint = _currentBlock.AddComponent<TargetJoint2D>();
         _joint.anchor = _currentBlock.transform.InverseTransformPoint(touchPoint);
         _joint.dampingRatio = 10f;
         _joint.frequency = 15f;
         _joint.maxForce = 4000;
+
+        return _currentBlock.GetComponent<Block>();
     }
 
     private void Update()

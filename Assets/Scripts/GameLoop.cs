@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,8 +6,12 @@ public class GameLoop : MonoBehaviour
 {
     public float topPosition;
     public float sideBounds;
-    [SerializeField] private NextBlockProvider _nextBlockProvider;
+    [SerializeField] private List<NextBlockProvider> _nextBlockProviders;
     [SerializeField] private DragManager _dragManager;
+
+    private Block lastBlock;
+
+    private bool enableTouch = true;
 
     private void OnDrawGizmos()
     {
@@ -17,7 +22,7 @@ public class GameLoop : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && enableTouch)
         {
            // Vector2 position = new Vector2(GetTouchPosition().x, transform.position.y + topPosition);
            // SpawnShape(_nextBlockProvider.NextBlock, position);
@@ -25,10 +30,48 @@ public class GameLoop : MonoBehaviour
            var touchPoint = GetTouchPosition();
          //  var primitive = GameObject.CreatePrimitive(PrimitiveType.Sphere);
       //     primitive.transform.position = touchPoint;
-            if(_nextBlockProvider.NextBlockCollider.OverlapPoint(touchPoint))
+          foreach (NextBlockProvider nextBlockProvider in _nextBlockProviders)
+          {
+              if(nextBlockProvider.NextBlockCollider.OverlapPoint(touchPoint))
+              {
+                  lastBlock = _dragManager.StartDragInteraciton(touchPoint, nextBlockProvider);
+                  StartCoroutine(WaitForStability());
+                  break;
+              }
+          }
+           
+        }
+    }
+
+    IEnumerator WaitForStability()
+    {
+        foreach (NextBlockProvider nextBlockProvider in _nextBlockProviders)
+        {
+            nextBlockProvider.Clear();
+        }
+        enableTouch = false;
+
+        yield return new  WaitUntil(()=>Input.GetMouseButtonUp(0));
+        
+        float timer = 1;
+        while (timer > 0)
+        {
+            if (lastBlock.IsStable())
             {
-                _dragManager.StartDragInteraciton(touchPoint);
+                timer -= 0.1f;
             }
+            else
+            {
+                timer = 1f;
+            }
+
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        enableTouch = true;
+        foreach (NextBlockProvider nextBlockProvider in _nextBlockProviders)
+        {
+            nextBlockProvider.Reset();
         }
     }
 

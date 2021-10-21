@@ -6,6 +6,7 @@ using UnityEngine;
 public class Board : MonoBehaviour
 {
     private bool _isFrozen;
+    [SerializeField] private CameraController _cameraController;
 
     private List<Block> _blocks;
     private Camera _camera;
@@ -37,10 +38,7 @@ public class Board : MonoBehaviour
     {
         foreach (Block block in _blocks)
         {
-            if (block.IsStable())
-            {
-                block.FreezeBlock(_isFrozen);
-            }
+            block.FreezeBlock(_isFrozen);
         }
     }
 
@@ -74,7 +72,8 @@ public class Board : MonoBehaviour
         {
             if (heigtList[heigtList.Count - 1].transform.position.y > _camera.transform.position.y)
             {
-                _camera.transform.position += Vector3.up;
+                _cameraController.TargetHeight = heigtList[heigtList.Count - 1].transform.position.y;
+                // _camera.transform.position += Vector3.up;
             }
 
             List<Block> blocksMarkedForRemoval = new List<Block>();

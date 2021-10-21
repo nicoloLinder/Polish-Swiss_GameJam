@@ -31,10 +31,7 @@ public class NextBlockProvider : MonoBehaviour
 
     private void DisplayNextBlock()
     {
-        if (_lookupParent.childCount > 0)
-        {
-            Destroy(_lookupParent.GetChild(0).gameObject);
-        }
+        Clear();
 
         var lookup = Instantiate(_currentPrefab);
         var rend = lookup.GetComponent<SpriteRenderer>();
@@ -45,5 +42,21 @@ public class NextBlockProvider : MonoBehaviour
         lookup.GetComponent<Rigidbody2D>().isKinematic = true;
         lookup.transform.parent = _lookupParent;
         lookup.transform.localPosition = Vector3.zero;
+    }
+
+    public void Reset()
+    {
+        NextBlock = _prefabs[Random.Range(0, _prefabs.Length)];
+    }
+
+    public void Clear()
+    {
+        if (_lookupParent.childCount > 0)
+        {
+            for (int i = 0; i < _lookupParent.childCount; i++)
+            {
+                Destroy(_lookupParent.GetChild(i).gameObject);
+            }
+        }
     }
 }
