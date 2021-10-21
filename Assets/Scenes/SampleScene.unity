@@ -2813,10 +2813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topPosition: 7.04
   sideBounds: 4
-  _nextBlockProviders:
-  - {fileID: 1804066570}
-  - {fileID: 712313610}
-  - {fileID: 329429839}
+  _nextBlockProviders: []
   _dragManager: {fileID: 1619791831}
 --- !u!4 &1619791829
 Transform:
@@ -2857,7 +2854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ca14edacb2a1c14cae426e0f9437f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cameraController: {fileID: 519420030}
+  _cameraController: {fileID: 0}
 --- !u!1 &1804066568
 GameObject:
   m_ObjectHideFlags: 0
