@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4905937888294096429}
   - component: {fileID: 287934708342673419}
   - component: {fileID: 1628942848520849723}
+  - component: {fileID: -5859854761170680712}
   m_Layer: 0
   m_Name: food-truck
   m_TagString: Untagged
@@ -146,3 +147,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-5859854761170680712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5771558251356302591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 462799b8fcf04b528f8ccfd52e9be230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody2D: {fileID: 1628942848520849723}
+  _spriteRenderer: {fileID: 4905937888294096429}

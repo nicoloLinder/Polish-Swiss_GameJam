@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6630799171298383268}
   - component: {fileID: 1495787884826947096}
   - component: {fileID: 587497119473688017}
+  - component: {fileID: -202235908262467243}
   m_Layer: 0
   m_Name: cow
   m_TagString: Untagged
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: fc63aee72dfd94d74b2b82275ea35297, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -109,28 +110,16 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.78125, y: 0.5}
-      - {x: -1.15625, y: 0.5}
-      - {x: -1.09375, y: 0.28125}
-      - {x: -1.0625, y: 0.09375}
-      - {x: -0.96875, y: -0.03125}
-      - {x: -0.8125, y: -0.09375}
+    - - {x: -0.8125, y: -0.09375}
       - {x: -0.8125, y: -0.34375}
-      - {x: -0.71875, y: -0.46875}
       - {x: -0.71875, y: -1}
       - {x: -0.21875, y: -1}
-      - {x: -0.1875, y: -0.53125}
-      - {x: 0.1875, y: -0.5}
-      - {x: 0.28125, y: -0.6875}
       - {x: 0.28125, y: -1}
       - {x: 0.78125, y: -1}
-      - {x: 0.78125, y: -0.65625}
       - {x: 0.9375, y: -0.625}
       - {x: 0.75, y: 0.0625}
       - {x: 0.53125, y: 0.25}
       - {x: -0.5, y: 0.25}
-      - {x: -0.34375, y: 0.46875}
-      - {x: -0.40625, y: 0.5625}
 --- !u!50 &587497119473688017
 Rigidbody2D:
   serializedVersion: 4
@@ -152,3 +141,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-202235908262467243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3804766553354173470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 462799b8fcf04b528f8ccfd52e9be230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody2D: {fileID: 587497119473688017}
+  _spriteRenderer: {fileID: 6630799171298383268}

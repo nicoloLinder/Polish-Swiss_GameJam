@@ -65,7 +65,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -77,7 +77,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -89,7 +89,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: iPhone
-    maxTextureSize: 2048
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -101,7 +101,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -116,28 +116,16 @@ TextureImporter:
     sprites: []
     outline: []
     physicsShape:
-    - - {x: -25, y: 16}
-      - {x: -37, y: 16}
-      - {x: -35, y: 9}
-      - {x: -34, y: 3}
-      - {x: -31, y: -1}
-      - {x: -26, y: -3}
+    - - {x: -26, y: -3}
       - {x: -26, y: -11}
-      - {x: -23, y: -15}
       - {x: -23, y: -32}
       - {x: -7, y: -32}
-      - {x: -6, y: -17}
-      - {x: 6, y: -16}
-      - {x: 9, y: -22}
       - {x: 9, y: -32}
       - {x: 25, y: -32}
-      - {x: 25, y: -21}
       - {x: 30, y: -20}
       - {x: 24, y: 2}
       - {x: 17, y: 8}
       - {x: -16, y: 8}
-      - {x: -11, y: 15}
-      - {x: -13, y: 18}
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
     internalID: 0

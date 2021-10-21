@@ -1,11 +1,14 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Board : MonoBehaviour
 {
     private bool _isFrozen;
-    
-    private List<GameObject> _blocks;
+
+    private List<Block> _blocks;
+    private Camera _camera;
+
     public bool IsFrozen
     {
         get => _isFrozen;
@@ -13,33 +16,86 @@ public class Board : MonoBehaviour
         {
             _isFrozen = value;
             UpdateFrozenStatus();
-        } 
+            if (!_isFrozen)
+            {
+                CheckTallestBlock();
+            }
+        }
+    }
+
+    private void Start()
+    {
+        _camera = Camera.main;
     }
 
     private void UpdateFrozenStatus()
     {
-        foreach (GameObject block in _blocks)
+        foreach (Block block in _blocks)
         {
-            var rigidbody = block.GetComponent<Rigidbody2D>();
-            rigidbody.isKinematic = _isFrozen;
-            rigidbody.velocity = Vector2.zero;
-            rigidbody.angularVelocity = 0f;
+            if (block.IsStable())
+            {
+                block.FreezeBlock(_isFrozen);
+            }
         }
+    }
+
+    private void FreezeBlock(GameObject block, bool isFrozen)
+    {
     }
 
     private void Awake()
     {
-        _blocks = new List<GameObject>();
+        _blocks = new List<Block>();
     }
 
-    public void AddBlock(GameObject block)
+    public void AddBlock(Block block)
     {
         _blocks.Add(block);
     }
 
 
-    public void RemoveBlock(GameObject block)
+    public void RemoveBlock(Block block)
     {
         _blocks.Remove(block);
+    }
+
+    public void CheckTallestBlock()
+    {
+        List<Block> heigtList = _blocks.OrderBy(block => block.transform.position.y).ToList();
+
+        if (heigtList.Count > 0)
+        {
+            if (heigtList[heigtList.Count - 1].transform.position.y > _camera.transform.position.y)
+            {
+                _camera.transform.position += Vector3.up;
+            }
+
+            List<Block> blocksMarkedForRemoval = new List<Block>();
+            
+            foreach (Block sortedObject in heigtList)
+            {
+                if (sortedObject.IsStable())
+                {
+                    // sortedObject.SetColor(Color.green);/**/
+                    if (sortedObject.transform.position.y < _camera.transform.position.y - 4)
+                    {
+                        blocksMarkedForRemoval.Add(sortedObject);
+                    }
+                }
+                else
+                {
+                    // sortedObject.SetColor(Color.red);
+                }
+
+            }
+
+            foreach (Block markedBlock in blocksMarkedForRemoval)
+            {
+                markedBlock.SetColor(Color.black);
+                ;
+                markedBlock.FreezeBlock(true);
+                RemoveBlock(markedBlock);
+            }
+        }
     }
 }

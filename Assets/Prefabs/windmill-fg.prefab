@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 54ef7f32726b949eebea3e1eb6694dac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 4310859073445500116}
   - component: {fileID: 1363783344791118877}
   - component: {fileID: 6508982003761866895}
+  - component: {fileID: -3379321436049869491}
   m_Layer: 0
   m_Name: windmill-fg
   m_TagString: Untagged
@@ -234,3 +235,17 @@ PolygonCollider2D:
       - {x: -0.25, y: -1.5}
       - {x: 0.25, y: -1.5}
       - {x: 0.0625, y: 1.0625}
+--- !u!114 &-3379321436049869491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280917737701706926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 462799b8fcf04b528f8ccfd52e9be230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody2D: {fileID: 1363783344791118877}
+  _spriteRenderer: {fileID: 4310859073445500116}

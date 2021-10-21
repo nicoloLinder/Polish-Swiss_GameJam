@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 386317318187378276}
   - component: {fileID: 5794150395898065078}
   - component: {fileID: 8991421796432558918}
+  - component: {fileID: 7942062455708899096}
   m_Layer: 0
   m_Name: Housing
   m_TagString: Untagged
@@ -134,3 +135,17 @@ PolygonCollider2D:
       - {x: -1.5625, y: -1.5}
       - {x: 1.53125, y: -1.5}
       - {x: 1.5625, y: 1.5}
+--- !u!114 &7942062455708899096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643158116348513406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 462799b8fcf04b528f8ccfd52e9be230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody2D: {fileID: 5794150395898065078}
+  _spriteRenderer: {fileID: 386317318187378276}
