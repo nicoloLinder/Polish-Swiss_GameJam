@@ -37,6 +37,7 @@ public class GameLoop : MonoBehaviour
               {
                   lastBlock = _dragManager.StartDragInteraciton(touchPoint, nextBlockProvider);
                   lastBlock.OnDrop += _gameEndController.OnGameEnded;
+                  lastBlock.OnDropAnim += _gameEndController.TriggerAnimation;
                   StartCoroutine(WaitForStability());
                   break;
               }
