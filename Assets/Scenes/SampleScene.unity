@@ -2380,8 +2380,8 @@ MonoBehaviour:
   _pollutionText: {fileID: 737137250}
   _pollutionDisplay: {fileID: 1194782653}
   _board: {fileID: 1619791832}
-  _pollutionWinText: You achieved net zero polution!
-  _pollutionLooseText: The planet no longer sustains life due to pollution.
+  _pollutionWinText: Your tower is sustainable!
+  _pollutionLooseText: Your tower has fallen into the fires of pollution.
 --- !u!1 &1543103398
 GameObject:
   m_ObjectHideFlags: 0
