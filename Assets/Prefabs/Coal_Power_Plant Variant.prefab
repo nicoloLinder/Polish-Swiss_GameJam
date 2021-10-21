@@ -11,17 +11,21 @@ PrefabInstance:
       propertyPath: _pollutionModifier
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 2056965252, guid: 03f22634736a84817a67607987fa55ae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 512742462212368009, guid: 03f22634736a84817a67607987fa55ae, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 512742462212368009, guid: 03f22634736a84817a67607987fa55ae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -53.386
+      value: -22.304342
       objectReference: {fileID: 0}
     - target: {fileID: 512742462212368009, guid: 03f22634736a84817a67607987fa55ae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 43.88038
+      value: -11.501796
       objectReference: {fileID: 0}
     - target: {fileID: 512742462212368009, guid: 03f22634736a84817a67607987fa55ae, type: 3}
       propertyPath: m_LocalPosition.z
