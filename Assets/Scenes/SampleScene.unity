@@ -6965,6 +6965,7 @@ MonoBehaviour:
   _bounds:
   - {fileID: 1405242762}
   - {fileID: 2116736397}
+  _animator: {fileID: 1194782652}
 --- !u!1 &1221512575
 GameObject:
   m_ObjectHideFlags: 0
