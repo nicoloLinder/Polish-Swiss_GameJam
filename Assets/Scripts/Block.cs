@@ -45,9 +45,10 @@ public class Block : MonoBehaviour
             OnDrop.Invoke("You dropped it");
         }
 
-        if (!IsStable())
+        if (!_isFrozen)
         {
-            
+            var isStable = IsStable();
+            _spriteRenderer.material.SetColor("_OutlineColor", isStable ? Color.green : Color.red);
         }
     }
 
@@ -63,7 +64,8 @@ public class Block : MonoBehaviour
 
     public void PlayFreezeAnimation()
     {
-        StartCoroutine(FreezeAnimation());
+        _spriteRenderer.material.SetColor("_OutlineColor", Color.blue);
+        // StartCoroutine(FreezeAnimation());
     }
     
     private IEnumerator FreezeAnimation()
