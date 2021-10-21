@@ -98,10 +98,11 @@ public class Board : MonoBehaviour
 
             foreach (Block markedBlock in blocksMarkedForRemoval)
             {
-                markedBlock.SetColor(Color.black);
+                markedBlock.PlayFreezeAnimation();
                 markedBlock.FreezeBlock(true);
                 RemoveBlock(markedBlock);
             }
         }
     }
+    
 }

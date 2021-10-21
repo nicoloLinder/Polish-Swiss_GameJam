@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class Block : MonoBehaviour
@@ -59,5 +60,24 @@ public class Block : MonoBehaviour
     public bool IsStable()
     {
         return _rigidbody2D.velocity.SqrMagnitude() < 0.1f && _rigidbody2D.angularVelocity < 0.1f;
+    }
+
+    public void PlayFreezeAnimation()
+    {
+        StartCoroutine(FreezeAnimation());
+    }
+    
+    private IEnumerator FreezeAnimation()
+    {
+        var freezeTime = 0.4f;
+        var timeElapsed = 0f;
+        var mat = _spriteRenderer.material;
+        while (timeElapsed < freezeTime)
+        {
+            timeElapsed += Time.deltaTime;
+            mat.SetFloat("_freezeAmount", timeElapsed / freezeTime);
+            yield return null;
+        }
+        mat.SetFloat("_freezeAmount", 1f);
     }
 }
