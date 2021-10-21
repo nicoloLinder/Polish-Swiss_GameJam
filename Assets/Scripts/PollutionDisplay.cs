@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PollutionDisplay : MonoBehaviour
@@ -11,6 +12,12 @@ public class PollutionDisplay : MonoBehaviour
     private float _currentPollution;
     private Quaternion[] _rotations;
     
+    public event Action<float> NotifyPollutionChanged;
+
+    public float MaxPollution => _maxPollution;
+
+    public float CurrentPollution => _currentPollution;
+
     private void Awake()
     {
         _currentPollution = _startingPollution;
@@ -25,6 +32,7 @@ public class PollutionDisplay : MonoBehaviour
     private void OnBlockAdded(Block block)
     {
         _currentPollution += block.PollutionModifier;
+        NotifyPollutionChanged?.Invoke(_currentPollution);
     }
 
     private void Update()

@@ -10,6 +10,8 @@ public class Board : MonoBehaviour
     private List<Block> _blocks;
     private Camera _camera;
 
+    public int BlocksPlaced { get; private set; } = 0;
+
     public event Action<Block> NotifyBlockAdded; 
     
     public bool IsFrozen
@@ -53,6 +55,7 @@ public class Board : MonoBehaviour
 
     public void AddBlock(Block block)
     {
+        BlocksPlaced++;
         _blocks.Add(block);
         NotifyBlockAdded?.Invoke(block);
     }
