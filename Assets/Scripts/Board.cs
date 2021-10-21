@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -9,6 +10,8 @@ public class Board : MonoBehaviour
     private List<Block> _blocks;
     private Camera _camera;
 
+    public event Action<Block> NotifyBlockAdded; 
+    
     public bool IsFrozen
     {
         get => _isFrozen;
@@ -51,6 +54,7 @@ public class Board : MonoBehaviour
     public void AddBlock(Block block)
     {
         _blocks.Add(block);
+        NotifyBlockAdded?.Invoke(block);
     }
 
 
@@ -92,7 +96,6 @@ public class Board : MonoBehaviour
             foreach (Block markedBlock in blocksMarkedForRemoval)
             {
                 markedBlock.SetColor(Color.black);
-                ;
                 markedBlock.FreezeBlock(true);
                 RemoveBlock(markedBlock);
             }

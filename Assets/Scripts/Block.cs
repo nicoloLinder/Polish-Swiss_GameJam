@@ -5,12 +5,15 @@ public class Block : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private float _pollutionModifier;
 
     private Vector2 _frozenVelocity;
     private float _frozenAngularVelocity;
 
     private bool _isFrozen;
-    
+
+    public float PollutionModifier => _pollutionModifier;
+
     public void FreezeBlock(bool isFrozen)
     {
         _rigidbody2D.isKinematic = isFrozen;
