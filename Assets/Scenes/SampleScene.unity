@@ -7293,7 +7293,7 @@ MonoBehaviour:
   _pollutionText: {fileID: 737137250}
   _pollutionDisplay: {fileID: 1194782653}
   _board: {fileID: 1619791832}
-  _pollutionWinText: Your tower is sustainable! You balanced the future. For now.
+  _pollutionWinText: Your tower is sustainable! You stabilized the climate. For now.
   _pollutionLooseText: Your tower has fallen into the fires of pollution. Perhaps
     the people will rise from the ashes.
 --- !u!1 &1543103398
