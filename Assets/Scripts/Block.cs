@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Block : MonoBehaviour
@@ -7,6 +8,7 @@ public class Block : MonoBehaviour
     [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private float _pollutionModifier;
+    [SerializeField] private Transform collisionPoof;
 
     private Vector2 _frozenVelocity;
     private float _frozenAngularVelocity;
@@ -42,7 +44,7 @@ public class Block : MonoBehaviour
     {
         if (!_isFrozen && Mathf.Abs(transform.position.y-Camera.main.transform.position.y) > 15)
         {
-            OnDrop.Invoke("You dropped it");
+            OnDrop.Invoke("You lost a piece. Progress has stalled.");
         }
 
         if (!_isFrozen)
@@ -50,6 +52,11 @@ public class Block : MonoBehaviour
             var isStable = IsStable();
             _spriteRenderer.material.SetColor("_OutlineColor", isStable ? Color.green : Color.red);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        Destroy(Instantiate(collisionPoof, other.contacts[0].point, quaternion.identity).gameObject, 0.25f);
     }
 
     public void SetColor(Color color)

@@ -159,4 +159,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody2D: {fileID: -6135367245437359756}
   _spriteRenderer: {fileID: 1243937246920281501}
-  _pollutionModifier: 10
+  _pollutionModifier: 20
+  collisionPoof: {fileID: 5951984943681786885, guid: 5b23946c325c34b0fbcb7bbb8352b782, type: 3}

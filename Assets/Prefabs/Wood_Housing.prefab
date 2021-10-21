@@ -51,7 +51,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 4}
+    oldSize: {x: 8, y: 8}
     newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -105,7 +105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody2D: {fileID: 7344215208264033570}
   _spriteRenderer: {fileID: 3195296434090123461}
-  _pollutionModifier: 10
+  _pollutionModifier: 5
+  collisionPoof: {fileID: 5951984943681786885, guid: 5b23946c325c34b0fbcb7bbb8352b782, type: 3}
 --- !u!212 &3195296434090123461
 SpriteRenderer:
   m_ObjectHideFlags: 0
