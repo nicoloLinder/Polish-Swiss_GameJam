@@ -13,6 +13,8 @@ public class Block : MonoBehaviour
 
     private bool _isFrozen;
 
+    public Action<String> OnDrop;
+
     public float PollutionModifier => _pollutionModifier;
 
     public void FreezeBlock(bool isFrozen)
@@ -38,17 +40,14 @@ public class Block : MonoBehaviour
 
     private void Update()
     {
-        if (IsStable())
+        if (!_isFrozen && Mathf.Abs(transform.position.y-Camera.main.transform.position.y) > 15)
         {
-            SetColor(Color.green);
-            if (_isFrozen)
-            {
-                SetColor(Color.blue);
-            }
+            OnDrop.Invoke("You dropped it");
         }
-        else
+
+        if (!IsStable())
         {
-            SetColor(Color.red);
+            
         }
     }
 

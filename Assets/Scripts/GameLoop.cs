@@ -8,6 +8,7 @@ public class GameLoop : MonoBehaviour
     public float sideBounds;
     [SerializeField] private List<NextBlockProvider> _nextBlockProviders;
     [SerializeField] private DragManager _dragManager;
+    [SerializeField] private GameEndController _gameEndController;
 
     private Block lastBlock;
 
@@ -35,6 +36,7 @@ public class GameLoop : MonoBehaviour
               if(nextBlockProvider.NextBlockCollider.OverlapPoint(touchPoint))
               {
                   lastBlock = _dragManager.StartDragInteraciton(touchPoint, nextBlockProvider);
+                  lastBlock.OnDrop += _gameEndController.OnGameEnded;
                   StartCoroutine(WaitForStability());
                   break;
               }
