@@ -16,6 +16,7 @@ public class Block : MonoBehaviour
     private bool _isFrozen;
 
     public Action<String> OnDrop;
+    public Action<int> OnDropAnim;
 
     public float PollutionModifier => _pollutionModifier;
 
@@ -45,6 +46,7 @@ public class Block : MonoBehaviour
         if (!_isFrozen && Mathf.Abs(transform.position.y-Camera.main.transform.position.y) > 15)
         {
             OnDrop.Invoke("You lost a piece. Climate progress has stalled.");
+            OnDropAnim.Invoke(1);
         }
 
         if (!_isFrozen)
