@@ -9,6 +9,7 @@ public class PollutionDisplay : MonoBehaviour
     [SerializeField] private Board _board;
     [SerializeField] private Transform _arrowTransform;
     [SerializeField] private Transform[] _bounds;
+    [SerializeField] private MusicManager _musicManager;
     private float _currentPollution;
     private Quaternion[] _rotations;
     [SerializeField] private Animator _animator;
@@ -36,6 +37,7 @@ public class PollutionDisplay : MonoBehaviour
         NotifyPollutionChanged?.Invoke(_currentPollution);
         var remappedPolution = Mathf.RoundToInt((_currentPollution / _maxPollution) * 2f);
         _animator.SetInteger("level", remappedPolution);
+        _musicManager.CurrentPolution = _currentPollution / _maxPollution;
     }
 
     private void Update()

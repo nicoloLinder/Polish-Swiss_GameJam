@@ -7166,7 +7166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ec1e17f444b41b599bfd3c9b1c966eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
+  level: 0.5
   good: {fileID: 1177796711}
   bad: {fileID: 1177796710}
   ugly: {fileID: 1177796709}
@@ -7303,6 +7303,7 @@ MonoBehaviour:
   _bounds:
   - {fileID: 1405242762}
   - {fileID: 2116736397}
+  _musicManager: {fileID: 1177796712}
   _animator: {fileID: 1194782652}
 --- !u!1 &1221512575
 GameObject:

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class MusicManager : MonoBehaviour
 {
@@ -8,6 +9,10 @@ public class MusicManager : MonoBehaviour
     [SerializeField] private AudioSource bad;
     [SerializeField] private AudioSource ugly;
 
+    public float CurrentPolution
+    {
+        set => level = value;
+    }
 
     private void Update()
     {
